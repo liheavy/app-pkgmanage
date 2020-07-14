@@ -1,14 +1,14 @@
 - dbname: openEuer_20.03_LTS_x86
   src_db_file:
-  - /pkgmanage/dbfiles/source_repodata.sqlite 
+  - /etc/pkgship/dbfiles/source_repodata.sqlite 
   bin_db_file:
-  - /pkgmanage/dbfiles/everything_x86_64.sqlite 
+  - /etc/pkgship/dbfiles/everything_x86_64.sqlite 
   status: enable
   priority: 1
 - dbname: openEuer_20.03_LTS_aarch64
   src_db_file:
-  - /pkgmanage/dbfiles/source_repodata.sqlite 
+  - /etc/pkgship/dbfiles/source_repodata.sqlite 
   bin_db_file:
-  - /pkgmanage/dbfiles/everything_aarch64.sqlite 
+  - /etc/pkgship/dbfiles/everything_aarch64.sqlite 
   status: enable
   priority: 1
