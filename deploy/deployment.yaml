@@ -1,4 +1,4 @@
-# Deployment for repo service
+# Deployment for packagemanage service
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -17,13 +17,18 @@ spec:
         - name: database-init
           image: opensourceway/dbgetinit:v1.0
           volumeMounts:
-            - mountPath: /etc/pkgship
+            - mountPath: /etc/database
               name: data-volume
+          command:
+            - /bin/sh
+            - -c
+            - |
+              python3 getsqlitefile.py && cp /etc/pkgship/dbfiles/* /etc/database
       containers:
         - name: pkg-manage-server
           image: opensourceway/packagemanage:v2.0
           volumeMounts:
-            - mountPath: /etc/pkgship
+            - mountPath: /etc/database
               name: data-volume
             - mountPath: /etc/pkgship/conf.yaml
               name: pkgmanage-config-volume
@@ -39,7 +44,7 @@ spec:
             - /bin/sh
             - -c
             - |
-              pkgshipd start && sleep infinity"
+              pkgshipd start && sleep infinity
       volumes:
         - name: pkgmanage-config-volume
           configMap:
