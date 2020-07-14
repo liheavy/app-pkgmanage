@@ -1,0 +1,8 @@
+resources:
+  - configmap.yaml
+  - namespace.yaml
+  - deployment.yaml
+  - service.yaml
+commonLabels:
+  app: openeuler-packagemanage
+namespace: packagemanage

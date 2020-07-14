@@ -1,0 +1,48 @@
+# Deployment for repo service
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: package-manage-server
+spec:
+  selector:
+    matchLabels:
+      app: package-manage
+  template:
+    metadata:
+      labels:
+        app: package-manage
+    spec:
+      initContainers:
+        - name: database-init
+          image: opensourceway/dbgetinit:v1.0
+          volumeMounts:
+            - mountPath: /etc/pkgship
+              name: data-volume
+      containers:
+        - name: pkg-manage-server
+          image: opensourceway/packagemanage:v2.0
+          volumeMounts:
+            - mountPath: /etc/pkgship
+              name: data-volume
+            - mountPath: /etc/pkgship/conf.yaml
+              name: pkgmanage-config-volume
+              subPath: conf.yaml
+            - mountPath: /etc/pkgship/package.ini
+              name: pkgmanage-config-volume
+              subPath: package.ini
+          resources:
+            requests:
+              cpu: 2000m
+              memory: 2000Mi
+          command:
+            - /bin/sh
+            - -c
+            - |
+              pkgshipd start && sleep infinity"
+      volumes:
+        - name: pkgmanage-config-volume
+          configMap:
+            name: packagemanage-config
+        - name: data-volume
+          emptyDir: {}
