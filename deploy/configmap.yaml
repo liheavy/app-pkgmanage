@@ -47,6 +47,9 @@ data:
 
     query_ip_addr=0.0.0.0
 
+    ; The address of the remote service, the command line can directly 
+    ; call the remote service to complete the data request
+    remote_host=https://api.openeuler.org/pkgmanage
 
     [DATABASE]
 
@@ -85,9 +88,15 @@ data:
 
     [UWSGI]
 
+    ; uwsgi log file path
     daemonize=/var/log/uwsgi.log
-
+    
+    ; The data size transferred from back to forth
     buffer-size=65536
 
+    ; HTTP Connection time
+    http-timeout=600
 
+    ; Server response time
+    harakiri=600
 
