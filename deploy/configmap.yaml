@@ -6,19 +6,13 @@ metadata:
 data:
   conf.yaml: |
     - dbname: openEuer_20.03_LTS_x86
-      src_db_file:
-      - /etc/database/source_repodata.sqlite
-      bin_db_file:
-      - /etc/database/everything_x86_64.sqlite
-      status: enable
+      src_db_file: /etc/database/source_repodata.sqlite
+      bin_db_file: /etc/database/everything_x86_64.sqlite
       lifecycle: enable
       priority: 1
     - dbname: openEuer_20.03_LTS_aarch64
-      src_db_file:
-      - /etc/database/source_repodata.sqlite
-      bin_db_file:
-      - /etc/database/everything_aarch64.sqlite
-      status: enable
+      src_db_file: /etc/database/source_repodata.sqlite
+      bin_db_file: /etc/database/everything_aarch64.sqlite
       lifecycle: enable
       priority: 1
   package.ini: |
