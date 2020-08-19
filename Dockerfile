@@ -6,7 +6,7 @@ COPY python3-*.rpm ./
 RUN dnf install wget gcc python3-devel vim zlib-devel psmisc findutils procps bzip2 sqlite -y
 RUN dnf install python3-*.rpm -y
 RUN pip3 install flask-script marshmallow wget bs4 Flask_APScheduler XlsxWriter xlrd
-RUN pip333 install --upgrade pyinstaller
+RUN pip3 install --upgrade pyinstaller
 
 WORKDIR /pkgmanage
 
