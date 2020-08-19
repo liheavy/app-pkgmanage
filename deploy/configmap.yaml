@@ -11,6 +11,7 @@ data:
       bin_db_file:
       - /etc/database/everything_x86_64.sqlite
       status: enable
+      lifecycle: enable
       priority: 1
     - dbname: openEuer_20.03_LTS_aarch64
       src_db_file:
@@ -18,6 +19,7 @@ data:
       bin_db_file:
       - /etc/database/everything_aarch64.sqlite
       status: enable
+      lifecycle: enable
       priority: 1
   package.ini: |
     [SYSTEM]
