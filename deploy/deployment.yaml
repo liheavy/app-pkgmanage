@@ -44,7 +44,11 @@ spec:
             - /bin/sh
             - -c
             - |
-              pkgshipd start && sleep infinity
+              pkgshipd start;
+              pkgship init;
+              pkgship batchtask --package;
+              pkgship batchtask --issue;
+              sleep infinity
       volumes:
         - name: pkgmanage-config-volume
           configMap:
