@@ -46,8 +46,8 @@ spec:
             - |
               pkgshipd start;
               pkgship init;
-              pkgship batchtask --package;
-              pkgship batchtask --issue;
+              pkgship update --package;
+              pkgship update --issue;
               sleep infinity
       volumes:
         - name: pkgmanage-config-volume
