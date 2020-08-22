@@ -7,10 +7,10 @@ RUN pip3 install wget bs4 pyyaml
 
 WORKDIR /etc/pkgship/
 
-COPY getsqlitefile.py ./
+COPY *.py ./
 
 RUN dnf clean all
-RUN python3 getsqlitefile.py
+#RUN python3 getsqlitefile.py
 
 #COPY conf.yaml /etc/pkgship
 

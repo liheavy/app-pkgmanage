@@ -23,7 +23,7 @@ spec:
             - /bin/sh
             - -c
             - |
-              python3 getsqlitefile.py && cp /etc/pkgship/dbfiles/* /etc/database
+              python3 getsqlitefileTemp.py "https://gitee.com/ruebb/pkgship_sqlite_file" "/etc/database"
       containers:
         - name: pkg-manage-server
           image: opensourceway/packagemanage:v2.0
