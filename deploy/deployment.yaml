@@ -26,6 +26,7 @@ spec:
               python3 getsqlitefile.py && cp /etc/pkgship/dbfiles/* /etc/database
       containers:
         - name: pkg-manage-server
+          image: opensourceway/packagemanage:v2.0
           volumeMounts:
             - mountPath: /etc/database
               name: data-volume
