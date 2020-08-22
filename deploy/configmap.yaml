@@ -5,14 +5,24 @@ metadata:
   name: packagemanage-config
 data:
   conf.yaml: |
-    - dbname: openEuer_20.03_LTS_x86
-      src_db_file: /etc/database/source_repodata.sqlite
-      bin_db_file: /etc/database/everything_x86_64.sqlite
+    - dbname: bringInRely
+      src_db_file: /etc/database/bringInRely_src.sqlite
+      bin_db_file: /etc/database/bringInRely_bin.sqlite
       lifecycle: enable
       priority: 1
-    - dbname: openEuer_20.03_LTS_aarch64
-      src_db_file: /etc/database/source_repodata.sqlite
-      bin_db_file: /etc/database/everything_aarch64.sqlite
+    - dbname: fedora30
+      src_db_file: /etc/database/fedora30_src.sqlite
+      bin_db_file: /etc/database/fedora30_bin.sqlite
+      lifecycle: enable
+      priority: 1
+    - dbname: mainline
+      src_db_file: /etc/database/mainline_src.sqlite
+      bin_db_file: /etc/database/mainline_bin.sqlite
+      lifecycle: enable
+      priority: 1
+    - dbname: openEuer
+      src_db_file: /etc/database/openEuler-src.sqlite
+      bin_db_file: /etc/database/openEuler-bin.sqlite
       lifecycle: enable
       priority: 1
   package.ini: |
