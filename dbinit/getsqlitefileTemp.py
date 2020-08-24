@@ -11,9 +11,9 @@ def main():
     
     url = sys.argv[1]
     localdir = sys.argv[2]
-    os.system("wget " + url + " -q -r -np -nd -A .sqlite")
+    os.system("git clone " + url)
     os.system("mkdir " + localdir)
-    os.system("cp -f *.sqlite " + localdir)
+    os.system("cp -f */*.sqlite " + localdir)
     return
 
 
