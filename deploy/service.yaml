@@ -20,5 +20,5 @@ spec:
   ports:
     - name: package-manage-web-read-port
       port: 8080
-      targetPort: 80
+      targetPort: 8080
 
