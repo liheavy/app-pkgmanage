@@ -4,7 +4,7 @@ metadata:
   name: packagemanage-service
 spec:
   selector:
-    app: package-manage
+    comp: package-manage
   ports:
     - name: package-manage-read-port
       port: 80
@@ -16,7 +16,7 @@ metadata:
   name: package-manage-web
 spec:
   selector:
-    app: package-manage-web
+    comp: package-manage-web
   ports:
     - name: package-manage-web-read-port
       port: 8080
