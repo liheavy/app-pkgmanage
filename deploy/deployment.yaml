@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app: package-manage
+        comp: package-manage
     spec:
       initContainers:
         - name: database-init
