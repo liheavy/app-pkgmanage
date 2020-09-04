@@ -9,22 +9,26 @@ data:
       src_db_file: /etc/database/bringInRely_src.sqlite
       bin_db_file: /etc/database/bringInRely_bin.sqlite
       lifecycle: enable
-      priority: 1
+      status: enable
+      priority: 2
     - dbname: fedora30
       src_db_file: /etc/database/fedora30_src.sqlite
       bin_db_file: /etc/database/fedora30_bin.sqlite
-      lifecycle: enable
-      priority: 1
+      lifecycle: disable
+      status: enable
+      priority: 3
     - dbname: mainline
       src_db_file: /etc/database/mainline_src.sqlite
       bin_db_file: /etc/database/mainline_bin.sqlite
       lifecycle: enable
+      status: enable
       priority: 1
-    - dbname: openEuer
+    - dbname: openEuler_LTS_20.03
       src_db_file: /etc/database/openEuler-src.sqlite
       bin_db_file: /etc/database/openEuler-bin.sqlite
       lifecycle: enable
-      priority: 1
+      status: enable
+      priority: 3
   package.ini: |
     [SYSTEM]
 
