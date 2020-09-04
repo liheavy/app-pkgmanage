@@ -24,6 +24,8 @@ spec:
             - -c
             - |
               python3 getsqlitefileTemp.py "https://gitee.com/ruebb/pkgship_sqlite_file" "/etc/database"
+              cd /etc/database
+              touch $(date "+%Y-%m-%d_%h:%M:%S").time
       containers:
         - name: pkg-manage-server
           image: opensourceway/packagemanage:v2.0
