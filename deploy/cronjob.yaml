@@ -1,0 +1,28 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: update-pkgship-db
+spec:
+  schedule: "* 0 * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: update-pkgship-db
+              image: opensourceway/dbgetinit:v1.0
+              volumeMounts:
+                - mountPath: /etc/database
+                  name: database-volume
+              command:
+                - /bin/sh
+                - -c
+                - |
+                  python3 getsqlitefileTemp.py "https://gitee.com/ruebb/pkgship_sqlite_file" "/etc/database"
+          volumes:
+            - name: database-volume
+              persistentVolumeClaim:
+                claimName: openeuler-pkgship-db-volume
+

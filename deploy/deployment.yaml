@@ -18,7 +18,7 @@ spec:
           image: opensourceway/dbgetinit:v1.0
           volumeMounts:
             - mountPath: /etc/database
-              name: data-volume
+              name: database-volume
           command:
             - /bin/sh
             - -c
@@ -53,8 +53,9 @@ spec:
         - name: pkgmanage-config-volume
           configMap:
             name: packagemanage-config
-        - name: data-volume
-          emptyDir: {}
+        - name: database-volume
+          persistentVolumeClaim:
+            claimName: openeuler-pkgship-db-volume
 
 ---
 kind: Deployment
