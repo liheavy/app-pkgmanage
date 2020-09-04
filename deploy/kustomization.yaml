@@ -1,8 +1,10 @@
 resources:
   - configmap.yaml
+  - cronjob.yaml
   - namespace.yaml
   - deployment.yaml
   - service.yaml
+  - pvc.yaml
 commonLabels:
   app: openeuler-packagemanage
 namespace: packagemanage
