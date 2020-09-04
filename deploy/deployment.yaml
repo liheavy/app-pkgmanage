@@ -29,7 +29,7 @@ spec:
           image: opensourceway/packagemanage:v2.0
           volumeMounts:
             - mountPath: /etc/database
-              name: data-volume
+              name: database-volume
             - mountPath: /etc/pkgship/conf.yaml
               name: pkgmanage-config-volume
               subPath: conf.yaml
