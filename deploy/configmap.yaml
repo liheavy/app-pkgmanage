@@ -29,6 +29,24 @@ data:
       lifecycle: enable
       status: enable
       priority: 3
+    - dbname: extras
+      src_db_file: /etc/database/extras_src.sqlite
+      bin_db_file: /etc/database/extras_bin.sqlite
+      lifecycle: enable
+      status: enable
+      priority: 2
+    - dbname: epol
+      src_db_file: /etc/database/epol_src.sqlite
+      bin_db_file: /etc/database/epol_bin.sqlite
+      lifecycle: enable
+      status: enable
+      priority: 2
+    - dbname: factory
+      src_db_file: /etc/database/factory_src.sqlite
+      bin_db_file: /etc/database/factory_bin.sqlite
+      lifecycle: enable
+      status: enable
+      priority: 2
   package.ini: |
     [SYSTEM]
 
