@@ -8,7 +8,7 @@ COPY openEuler.repo /etc/yum.repos.d/
 COPY conf.yaml ./
 COPY pkgship-*.rpm ./
 
-RUN dnf update
+RUN dnf update -y
 RUN dnf install pkgship-*.rpm -y
 RUN dnf clean all
 
