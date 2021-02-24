@@ -47,6 +47,12 @@ data:
       lifecycle: enable
       status: enable
       priority: 2
+    - dbname: openEuler_20.03_LTS_SP1
+      src_db_file: /etc/database/openEuler-20.03-LTS-SP1-src.sqlite
+      bin_db_file: /etc/database/openEuler-20.03-LTS-SP1-bin.sqlite
+      lifecycle: enable
+      status: enable
+      priority: 4
   package.ini: |
     [SYSTEM]
 
