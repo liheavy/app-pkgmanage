@@ -13,19 +13,6 @@ spec:
       labels:
         comp: package-manage
     spec:
-      initContainers:
-        - name: database-init
-          image: opensourceway/dbgetinit:v1.0
-          volumeMounts:
-            - mountPath: /etc/database
-              name: database-volume
-          command:
-            - /bin/sh
-            - -c
-            - |
-              python3 getsqlitefileTemp.py "https://gitee.com/ruebb/pkgship_sqlite_file" "/etc/database"
-              cd /etc/database
-              touch $(date "+%Y-%m-%d_%H:%M:%S").time
       containers:
         - name: pkg-manage-server
           image: opensourceway/packagemanage:v2.0
@@ -46,10 +33,7 @@ spec:
             - /bin/sh
             - -c
             - |
-              pkgshipd start;
-              pkgship init;
-              pkgship update --package;
-              pkgship update --issue;
+              bash /etc/auto_setup.sh
               sleep infinity
       volumes:
         - name: pkgmanage-config-volume

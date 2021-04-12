@@ -5,150 +5,82 @@ metadata:
   name: packagemanage-config
 data:
   conf.yaml: |
-    - dbname: bringInRely
-      src_db_file: /etc/database/bringInRely_src.sqlite
-      bin_db_file: /etc/database/bringInRely_bin.sqlite
-      lifecycle: enable
-      status: enable
-      priority: 2
-    - dbname: fedora30
-      src_db_file: /etc/database/fedora30_src.sqlite
-      bin_db_file: /etc/database/fedora30_bin.sqlite
-      lifecycle: disable
-      status: enable
-      priority: 3
-    - dbname: mainline
-      src_db_file: /etc/database/mainline_src.sqlite
-      bin_db_file: /etc/database/mainline_bin.sqlite
-      lifecycle: enable
-      status: enable
+    - dbname: openeuler-20.09
+      src_db_file: https://repo.openeuler.org/openEuler-20.09/source
+      bin_db_file: https://repo.openeuler.org/openEuler-20.09/everything/aarch64
       priority: 1
-    - dbname: openEuler_LTS_20.03
-      src_db_file: /etc/database/openEuler-src.sqlite
-      bin_db_file: /etc/database/openEuler-bin.sqlite
-      lifecycle: enable
-      status: enable
-      priority: 3
-    - dbname: extras
-      src_db_file: /etc/database/extras_src.sqlite
-      bin_db_file: /etc/database/extras_bin.sqlite
-      lifecycle: enable
-      status: enable
-      priority: 2
-    - dbname: epol
-      src_db_file: /etc/database/epol_src.sqlite
-      bin_db_file: /etc/database/epol_bin.sqlite
-      lifecycle: enable
-      status: enable
-      priority: 2
-    - dbname: factory
-      src_db_file: /etc/database/factory_src.sqlite
-      bin_db_file: /etc/database/factory_bin.sqlite
-      lifecycle: enable
-      status: enable
-      priority: 2
-    - dbname: openEuler_20.03_LTS_SP1
-      src_db_file: /etc/database/openEuler-20.03-LTS-SP1-src.sqlite
-      bin_db_file: /etc/database/openEuler-20.03-LTS-SP1-bin.sqlite
-      lifecycle: enable
-      status: enable
-      priority: 4
+    - dbname: fedora30
+      src_db_file: https://mirrors.huaweicloud.com/fedora/releases/30/Everything/source/tree/
+      bin_db_file: https://mirrors.huaweicloud.com/fedora/releases/30/Everything/aarch64/os/
+      priority: 3 
+    - dbname: openeuler_lts_20.03
+      src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS/source/
+      bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS/everything/aarch64/
+      priority: 2 
   package.ini: |
     [SYSTEM]
-
     ; Configuration file path for data initialization
     init_conf_path=/etc/pkgship/conf.yaml
-
-    ; Where to store data files when using sqlite database
-    ; data_base_path=/var/run/pkgship_dbs
-
-    ; Port managed by the administrator, with write permission
-
-    write_port=8080
-
+    
     ; Ordinary user query port, only the right to query data, no permission to write data
-
+        
     query_port=8090
-
-    ; IP address path with write permission
-
-    write_ip_addr=0.0.0.0
-
+    
     ; IP address path with permission to query data
-
+    
     query_ip_addr=0.0.0.0
-
+    
     ; The address of the remote service, the command line can directly 
     ; call the remote service to complete the data request
     remote_host=https://api.openeuler.org/pkgmanage
-
+    
+    ; A temporary directory for files downloaded from the network that are cleaned periodically
+    ; The recommended free space in this dir is 1G
+    temporary_directory=/opt/pkgship/tmp/
+    
     [LOG]
-
     ; Custom log storage path
-    ; log_path=/var/run/pkgship
-
+    log_path=/var/log/pkgship/
+    
     ; Logging level
     ; The log level option value can only be as follows
     ; INFO DEBUG WARNING ERROR CRITICAL
     log_level=INFO
-
-    ; logging name
-    log_name=log_info.log
-
-    ; The number of dynamically created logs 
-    ; after the log file size reaches the upper limit. The default is 10 dynamically created logs
-    backup_count=10
-
-    ; The size of each log file, in bytes, the default size of a single log file is 300M
-    max_bytes=314572800
-
-    [UWSGI]
-
-    ; uwsgi log file path
-    daemonize=/var/log/uwsgi.log
     
+    ; Maximum capacity of each file, the unit is byte, default is 30M
+    max_bytes=31457280
+    
+    ; Number of old logs to keep;default is 30
+    backup_count=30
+    
+    [UWSGI]
+    ; Operation log storage path
+    daemonize=/var/log/pkgship-operation/uwsgi.log
     ; The data size transferred from back to forth
     buffer-size=65536
-
     ; HTTP Connection time
     http-timeout=600
-
     ; Server response time
     harakiri=600
-
-
-
-    [TIMEDTASK]
-    ; Execution frequency and switch of timing tasks
-    ; Whether to execute the switch for batch update of information such 
-    ; as the maintainer during initialization. When set to True, the maintainer 
-    ; and other information will be updated when the scheduled task starts 
-    ; to execute. When it is set to False, it will be updated when the scheduled 
-    ; task is executed. , Does not update information such as maintainers and maintenance levels
-
-    open=True
-
-    ; The time point at which the timing task is executed in a cycle. 
-    ; Every day is a cycle, and the time value can only be any integer period between 0 and 23
-    hour=3
-
-    ; Recurring timing task starts to execute the task at the current time point. 
-    ; The value range of this configuration item is an integer between 0 and 59
-    minute=0
-
-    [LIFECYCLE]
-    ; Configuration during the life cycle for tag information, issue and other information acquisition
-
-    ; The yaml address of each package is stored in the remote address, which can be
-    ; a remote warehouse address or the address of a static resource service
-    warehouse_remote=https://gitee.com/openeuler/openEuler-Advisor/raw/master/upstream-info/
-
-    ; When performing timing tasks, you can open multi-threaded execution, and you can set 
-    ; the number of threads in the thread pool according to the configuration of the server
-
-    pool_workers=10
-
-
-    ; The main body of the warehouse, the owner of the warehouse
-    ; When this value is not set, the system will default to src-openeuler
-    warehouse=src-openeuler
+    
+    [REDIS]
+    ;The address of the Redis cache server can be either a published
+    ;domain or an IP address that can be accessed normally
+    ;The link address defaults to 127.0.0.1
+    redis_host=127.0.0.1
+    
+    ;Redis cache server link port number, default is 6379
+    redis_port=6379
+    
+    ;Maximum number of connections allowed by RedIS server at one time
+    redis_max_connections=10
+    
+    [DATABASE]
+    ;The database engines supported in the system is sqlite database by default
+    database_engine_type=elastic
+    
+    ;Default ip address of database
+    database_host=127.0.0.1
+    
+    ;Default port of database
+    database_port=9200

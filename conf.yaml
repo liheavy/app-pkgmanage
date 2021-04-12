@@ -1,14 +1,39 @@
-- dbname: openEuer_20.03_LTS_x86
-  src_db_file:
-  - /etc/pkgship/dbfiles/source_repodata.sqlite 
-  bin_db_file:
-  - /etc/pkgship/dbfiles/everything_x86_64.sqlite 
-  status: enable
+# During initialization, you can initialize multiple databases at once
+
+# dbname: The name of the database to be initialized
+# It is recommended to use the version number as the name of the database
+
+# src_db_file:SQLite files related to the source package provided in the repo source
+
+# bin_db_file:SQLite files related to the binary package provided in the repo source
+
+# lifecycle:Does the imported source package data need to be stored in the life cycle database
+# When you need to store in the life cycle, you need to set the value to enable
+# When you do not need to store in the life cycle, you need to set the value to disable
+
+# priority: The priority of the database,When querying dependencies, which library is 
+# the first to find data the value can only be 1、 2、 3、 4
+- dbname: openeuler-21.03
+  src_db_file: https://repo.openeuler.org/openEuler-21.03/source
+  bin_db_file: https://repo.openeuler.org/openEuler-21.03/everything/aarch64
   priority: 1
-- dbname: openEuer_20.03_LTS_aarch64
-  src_db_file:
-  - /etc/pkgship/dbfiles/source_repodata.sqlite 
-  bin_db_file:
-  - /etc/pkgship/dbfiles/everything_aarch64.sqlite 
-  status: enable
-  priority: 1
+  
+- dbname: openeuler-20.03-lts-sp1
+  src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP1/source
+  bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP1/everything/aarch64
+  priority: 2
+
+- dbname: openeuler-20.09
+  src_db_file: https://repo.openeuler.org/openEuler-20.09/source
+  bin_db_file: https://repo.openeuler.org/openEuler-20.09/everything/aarch64
+  priority: 3
+  
+- dbname: openeuler-20.03-lts
+  src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS/source
+  bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS/everything/aarch64
+  priority: 4
+
+- dbname: fedora33
+  src_db_file: https://mirrors.huaweicloud.com/fedora/releases/33/Everything/source/tree/
+  bin_db_file: https://mirrors.huaweicloud.com/fedora/releases/33/Everything/aarch64/os/
+  priority: 5
