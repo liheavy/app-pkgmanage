@@ -5,18 +5,30 @@ metadata:
   name: packagemanage-config
 data:
   conf.yaml: |
+    - dbname: openeuler-21.03
+      src_db_file: https://repo.openeuler.org/openEuler-21.03/source
+      bin_db_file: https://repo.openeuler.org/openEuler-21.03/everything/aarch64
+      priority: 1
+
+    - dbname: openeuler-20.03-lts-sp1
+      src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP1/source
+      bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP1/everything/aarch64
+      priority: 2
+
     - dbname: openeuler-20.09
       src_db_file: https://repo.openeuler.org/openEuler-20.09/source
       bin_db_file: https://repo.openeuler.org/openEuler-20.09/everything/aarch64
-      priority: 1
-    - dbname: fedora30
-      src_db_file: https://mirrors.huaweicloud.com/fedora/releases/30/Everything/source/tree/
-      bin_db_file: https://mirrors.huaweicloud.com/fedora/releases/30/Everything/aarch64/os/
-      priority: 3 
-    - dbname: openeuler_lts_20.03
-      src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS/source/
-      bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS/everything/aarch64/
-      priority: 2 
+      priority: 3
+
+    - dbname: openeuler-20.03-lts
+      src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS/source
+      bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS/everything/aarch64
+      priority: 4
+
+    - dbname: fedora33
+      src_db_file: https://mirrors.huaweicloud.com/fedora/releases/33/Everything/source/tree/
+      bin_db_file: https://mirrors.huaweicloud.com/fedora/releases/33/Everything/aarch64/os/
+      priority: 5
   package.ini: |
     [SYSTEM]
     ; Configuration file path for data initialization
