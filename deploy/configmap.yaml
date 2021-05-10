@@ -25,10 +25,26 @@ data:
       bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS/everything/aarch64
       priority: 4
 
+    - dbname: fedora30
+      src_db_file: https://mirrors.huaweicloud.com/fedora/releases/30/Everything/source/tree/
+      bin_db_file: https://mirrors.huaweicloud.com/fedora/releases/30/Everything/aarch64/os/
+      priority: 5
+ 
+    - dbname: fedora31
+      src_db_file: https://mirrors.huaweicloud.com/fedora/releases/31/Everything/source/tree/
+      bin_db_file: https://mirrors.huaweicloud.com/fedora/releases/31/Everything/aarch64/os/
+      priority: 6
+
+    - dbname: fedora32
+      src_db_file: https://mirrors.huaweicloud.com/fedora/releases/32/Everything/source/tree/
+      bin_db_file: https://mirrors.huaweicloud.com/fedora/releases/32/Everything/aarch64/os/
+      priority: 7
+ 
     - dbname: fedora33
       src_db_file: https://mirrors.huaweicloud.com/fedora/releases/33/Everything/source/tree/
       bin_db_file: https://mirrors.huaweicloud.com/fedora/releases/33/Everything/aarch64/os/
-      priority: 5
+      priority: 8
+
   package.ini: |
     [SYSTEM]
     ; Configuration file path for data initialization
