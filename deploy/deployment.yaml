@@ -59,7 +59,7 @@ spec:
     spec:
       containers:
         - name: pkgmanagewebui
-          image: swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/pkgmanageweb:v1.0
+          image: opensourceway/pkgmanageweb:v1.0
           resources:
             requests:
               cpu: 2000m
