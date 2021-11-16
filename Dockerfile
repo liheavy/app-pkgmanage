@@ -1,4 +1,4 @@
-FROM gongzt/openeuler-21.03-x86
+FROM openeuler/openeuler:21.03
 
 MAINTAINER caozhi1214@gmail.com
 
@@ -11,6 +11,7 @@ COPY pkgship-*.rpm ./
 
 RUN dnf update -y
 RUN dnf install pkgship-*.rpm -y
+RUN dnf remove python3-simplejson -y
 RUN dnf install redis -y
 RUN dnf install elasticsearch-7.10.1 -y
 COPY redis.conf /etc/
