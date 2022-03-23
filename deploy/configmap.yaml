@@ -6,33 +6,33 @@ metadata:
 data:
   conf.yaml: |
     - dbname: openeuler-20.03-lts
-      src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS/source
-      bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS/everything/aarch64
+      src_db_file: https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS/source
+      bin_db_file: https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS/everything/aarch64
       priority: 1
 
     - dbname: openeuler-20.03-lts-sp1
-      src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP1/source
-      bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP1/everything/aarch64
+      src_db_file: https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS-SP1/source
+      bin_db_file: https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS-SP1/everything/aarch64
       priority: 2
 
     - dbname: openeuler-20.03-lts-sp2
-      src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP2/source
-      bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP2/everything/aarch64
+      src_db_file: https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS-SP2/source
+      bin_db_file: https://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS-SP2/everything/aarch64
       priority: 3
 
     - dbname: openeuler-20.09
-      src_db_file: https://repo.openeuler.org/openEuler-20.09/source
-      bin_db_file: https://repo.openeuler.org/openEuler-20.09/everything/aarch64
+      src_db_file: https://repo.huaweicloud.com/openeuler/openEuler-20.09/source
+      bin_db_file: https://repo.huaweicloud.com/openeuler/openEuler-20.09/everything/aarch64
       priority: 4
 
     - dbname: openeuler-21.03
-      src_db_file: https://repo.openeuler.org/openEuler-21.03/source
-      bin_db_file: https://repo.openeuler.org/openEuler-21.03/everything/aarch64
+      src_db_file: https://repo.huaweicloud.com/openeuler/openEuler-21.03/source
+      bin_db_file: https://repo.huaweicloud.com/openeuler/openEuler-21.03/everything/aarch64
       priority: 5
 
     - dbname: openeuler-21.09
-      src_db_file: https://repo.openeuler.org/openEuler-21.09/source
-      bin_db_file: https://repo.openeuler.org/openEuler-21.09/everything/aarch64
+      src_db_file: https://repo.huaweicloud.com/openeuler/openEuler-21.09/source
+      bin_db_file: https://repo.huaweicloud.com/openeuler/openEuler-21.09/everything/aarch64
       priority: 6
 
     - dbname: fedora32
