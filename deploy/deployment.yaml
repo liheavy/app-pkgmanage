@@ -16,6 +16,22 @@ spec:
       containers:
         - name: pkg-manage-server
           image: opensourceway/packagemanage:v2.0
+          env:
+          - name: OBS_ACCOUNT
+            valueFrom:
+              secretKeyRef:
+                name: package-manage-server-secret
+                key: obs_account
+          - name: OBS_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: package-manage-server-secret
+                key: obs_password
+          - name: GIT_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: package-manage-server-secret
+                key: git_token
           volumeMounts:
             - mountPath: /etc/database
               name: database-volume
