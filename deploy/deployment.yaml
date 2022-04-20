@@ -32,6 +32,16 @@ spec:
               secretKeyRef:
                 name: package-manage-server-secret
                 key: git_token
+          - name: EMAIL_SENDER
+            valueFrom:
+              secretKeyRef:
+                name: package-manage-server-secret
+                key: email_sender
+          - name: EMAIL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: package-manage-server-secret
+                key: email_password
           volumeMounts:
             - mountPath: /etc/database
               name: database-volume
