@@ -13,29 +13,29 @@
 
 # priority: The priority of the database,When querying dependencies, which library is 
 # the first to find data the value can only be 1、 2、 3、 4
+- dbname: openeuler-22.03-lts
+  src_db_file: https://repo.openeuler.org/openEuler-22.03-LTS/source/
+  bin_db_file: https://repo.openeuler.org/openEuler-22.03-LTS/everything/aarch64/
+  priority: 1
+
 - dbname: openeuler-20.03-lts
   src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS/source
   bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS/everything/aarch64
-  priority: 1
+  priority: 2
 
 - dbname: openeuler-20.03-lts-sp1
   src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP1/source
   bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP1/everything/aarch64
-  priority: 2
+  priority: 3
 
 - dbname: openeuler-20.03-lts-sp2
   src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP2/source
   bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP2/everything/aarch64
-  priority: 3
-
-- dbname: openeuler-20.09
-  src_db_file: https://repo.openeuler.org/openEuler-20.09/source
-  bin_db_file: https://repo.openeuler.org/openEuler-20.09/everything/aarch64
   priority: 4
 
-- dbname: openeuler-21.03
-  src_db_file: https://repo.openeuler.org/openEuler-21.03/source
-  bin_db_file: https://repo.openeuler.org/openEuler-21.03/everything/aarch64
+- dbname: openeuler-20.03-lts-sp3
+  src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP3/source
+  bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP3/everything/aarch64
   priority: 5
 
 - dbname: openeuler-21.09
@@ -43,17 +43,57 @@
   bin_db_file: https://repo.openeuler.org/openEuler-21.09/everything/aarch64
   priority: 6
 
+- dbname: openeuler-21.03
+  src_db_file: https://repo.openeuler.org/openEuler-21.03/source
+  bin_db_file: https://repo.openeuler.org/openEuler-21.03/everything/aarch64
+  priority: 7
+
+- dbname: openeuler-20.09
+  src_db_file: https://repo.openeuler.org/openEuler-20.09/source
+  bin_db_file: https://repo.openeuler.org/openEuler-20.09/everything/aarch64
+  priority: 8
+
 - dbname: fedora32
   src_db_file: https://mirrors.huaweicloud.com/fedora/releases/32/Everything/source/tree/
   bin_db_file: https://mirrors.huaweicloud.com/fedora/releases/32/Everything/aarch64/os/
-  priority: 7
+  priority: 9
   
 - dbname: fedora33
   src_db_file: https://mirrors.huaweicloud.com/fedora/releases/33/Everything/source/tree/
   bin_db_file: https://mirrors.huaweicloud.com/fedora/releases/33/Everything/aarch64/os/
-  priority: 8
+  priority: 10
 
 - dbname: fedora34
   src_db_file: https://mirrors.huaweicloud.com/fedora/releases/34/Everything/source/tree/
   bin_db_file: https://mirrors.huaweicloud.com/fedora/releases/34/Everything/aarch64/os/
-  priority: 9
+  priority: 11
+
+- dbname: openeuler-22.03-lts-epol
+  src_db_file: https://repo.openeuler.org/openEuler-22.03-LTS/EPOL/main/source/
+  bin_db_file: https://repo.openeuler.org/openEuler-22.03-LTS/EPOL/main/aarch64/
+  priority: 12
+
+- dbname: openeuler-20.03-lts-sp1-epol
+  src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP1/EPOL/source/
+  bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP1/EPOL/aarch64/
+  priority: 13
+
+- dbname: openeuler-20.03-lts-sp2-epol
+  src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP2/EPOL/main/source/
+  bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP2/EPOL/main/aarch64/
+  priority: 14
+
+- dbname: openeuler-20.03-lts-sp3-epol
+  src_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP3/EPOL/main/source/
+  bin_db_file: https://repo.openeuler.org/openEuler-20.03-LTS-SP3/EPOL/main/aarch64/
+  priority: 15
+
+- dbname: openeuler-21.09-epol
+  src_db_file: https://repo.openeuler.org/openEuler-21.09/EPOL/main/source/
+  bin_db_file: https://repo.openeuler.org/openEuler-21.09/EPOL/main/aarch64/
+  priority: 16
+
+- dbname: openeuler-21.03-epol
+  src_db_file: https://repo.openeuler.org/openEuler-21.03/EPOL/source/
+  bin_db_file: https://repo.openeuler.org/openEuler-21.03/EPOL/aarch64/
+  priority: 17
