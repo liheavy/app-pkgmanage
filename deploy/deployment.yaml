@@ -51,6 +51,9 @@ spec:
             - mountPath: /etc/pkgship/package.ini
               name: pkgmanage-config-volume
               subPath: package.ini
+            - mountPath: /etc/pkgship/timed_task.yaml
+              name: pkgmanage-config-volume
+              subPath: timed_task.yaml
           resources:
             requests:
               cpu: 2000m
@@ -59,6 +62,7 @@ spec:
             - /bin/sh
             - -c
             - |
+              chmod +x /etc/auto_setup.sh
               bash /etc/auto_setup.sh
               sleep infinity
       volumes:
