@@ -174,7 +174,7 @@ data:
 
     panel_port=8091
 
- timed_task.yaml: |
+  timed_task.yaml: |
     - type: synchronous_task
       scheduler: AsyncIOScheduler
       tasks:
