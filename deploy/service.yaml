@@ -9,6 +9,9 @@ spec:
     - name: package-manage-read-port
       port: 80
       targetPort: 8090
+    - name: package-manage-panel-read-port
+      port: 8091
+      targetPort: 8091
 ---
 apiVersion: v1
 kind: Service
