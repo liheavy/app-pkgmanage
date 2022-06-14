@@ -42,6 +42,8 @@ spec:
               secretKeyRef:
                 name: package-manage-server-secret
                 key: email_password
+          - name: MAIL_HOST
+            value: smtp.gmail.com
           volumeMounts:
             - mountPath: /etc/database
               name: database-volume
