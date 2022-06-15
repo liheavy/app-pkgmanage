@@ -218,7 +218,7 @@ data:
       tasks:
         - name: send_email
           trigger: cron
-          enable: true
+          enable: false
           day_of_week: 0
           hour: '4,14'
           minute: 0
