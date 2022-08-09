@@ -13,8 +13,7 @@ RUN dnf update -y
 RUN dnf install python-pip -y
 RUN dnf install pkgship-*.rpm -y
 RUN dnf remove python3-simplejson -y
-RUN dnf install redis -y
-RUN dnf install elasticsearch-7.10.1 -y
+RUN dnf install cronie -y
 COPY redis.conf /etc/
 COPY auto_setup.sh /etc/
 RUN dnf clean all
