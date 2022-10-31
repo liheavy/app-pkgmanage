@@ -220,7 +220,7 @@ data:
           trigger: cron
           enable: false
           day_of_week: 0
-          hour: '4,14'
+          hour: 4
           minute: 0
           second: 0
 
